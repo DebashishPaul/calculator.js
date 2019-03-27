@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="css/calculaor.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
+</head>
+    
+    <body style="background-color:#644565;">
+<div class="header">
+        <h1>25 services in a calculator</h1>
+</div>
+        
+<div class="body">
+   
+   <form name="frm">
+    <tr>
+       <td>input box: </td>
+        <input type="text" name="getvalue" />
+    </tr>
+    <br>
+    <br>
+    <tr>
+    <td><input type="button" value="Absolute" onClick="calculate(1)" /></td>
+    <td><input type="button" value="Round" onClick="calculate(2)" /></td>
+        <td><input type="button" value="Sine" onClick="calculate(3)" /></td>
+    <td><input type="button" value="Cosine" onClick="calculate(4)" /></td>
+    </tr>
+    <br>
+    <br>
+    <tr>
+    <td><input type="button" value="Tangent" onClick="calculate(5)" /></td>
+    <td><input type="button" value="Log" onClick="calculate(6)" /></td>
+        <td><input type="button" value="Floor" onClick="calculate(7)" /></td>
+    <td><input type="button" value="Ceil" onClick="calculate(8)" /></td>
+    </tr>
+    <br>
+    <br>
+    <tr>
+    <td><input type="button" value="Square Root" onClick="calculate(9)" /></td>
+    <td><input type="button" value="Random" onClick="calculate(10)" /></td>
+        <td><input type="button" value="Max" onClick="calculate(11)" /></td>
+    <td><input type="button" value="Min" onClick="calculate(12)" /></td>
+    </tr>
+     <br>
+    <br>
+    <tr>
+        <td><input type="button" value="E" onClick="calculate(13)" /></td>
+    <td><input type="button" value="Pi" onClick="calculate(14)" /></td>
+        <td><input type="button" value="Ln" onClick="calculate(15)" /></td>
+        <td><input type="button" value="ln10" onClick="calculate(16)" /></td>
+    </tr>
+       <br>
+    <br>
+       <tr>
+        <td><input type="button" value="Cube" onClick="calculate(17)" /></td>
+           <td><input type="button" value="log" onClick="calculate(18)" /></td>
+           <td><input type="button" value="sinh" onClick="calculate(19)" /></td>
+           <td><input type="button" value="cosh" onClick="calculate(20)" /></td>
+    </tr>
+     <br>
+    <br>
+    <tr>
+        <td>Result Box:</td>
+    <td><input type="text" name="showresult" /></td>
+    </tr>
+    </form> 
+    
+    <script type="text/javascript">
+         function calculate(x){
+             with(document.frm)
+             switch(x){
+                 case 1:
+        showresult.value=Math.abs(getvalue.value);
+                     break;
+                     
+                     case 2:
+        showresult.value=Math.round(getvalue.value);
+                     break;
+                     
+                     case 3:
+        showresult.value=Math.sin(convDegree(getvalue.value));
+                     break;
+                                  
+                    case 4:
+        showresult.value=Math.cos(convDegree(getvalue.value));
+                     break;
+                     
+                      case 5:
+        showresult.value=Math.tan(convDegree(getvalue.value));
+                     break;
+                                  
+                                  case 6:
+        showresult.value=Math.log(getvalue.value);
+                     break;
+                     
+                      case 7:
+        showresult.value=Math.floor(getvalue.value);
+                     break;
+                     
+                      case 8:
+        showresult.value=Math.ceil(getvalue.value);
+                     break;
+                     
+                      case 9:
+        showresult.value=Math.sqrt(getvalue.value);
+                     break;
+                     
+                     case 10:
+        showresult.value=rand();
+                     break;
+                     
+                     case 11:
+        alert(Math.max(getvalue.value, prompt('enter number', '0')) + 'is greater the number' );
+                     break;
+                     
+                     case 12:
+        alert(Math.min(getvalue.value, prompt('enter number', '1')) + 'is smaller the number' );
+                     break;
+                     
+                     case 13:
+        showresult.value=Math.E;
+                     break;
+                     
+                     case 14:
+        showresult.value=Math.PI;
+                     break;
+                     
+                      case 15:
+        showresult.value=Math.LN2;
+                     break;
+                     
+                     case 16:
+        showresult.value=Math.log10(getvalue.value);
+                     break;
+                     
+                     case 17:
+        showresult.value=Math.pow(getvalue.value,3);
+                     break;
+                     
+                     case 18:
+        showresult.value=Math.log(getvalue.value);
+                     break;
+                     
+                     case 19:
+        showresult.value=Math.sinh(getvalue.value);
+                     break;
+                     
+                     case 20:
+        showresult.value=Math.cosh(getvalue.value);
+                     break;
+                
+            }
+         }
+                                  
+    function convDegree(z){
+            return z*22/7/180;
+        }
+        
+       function rand(){
+    var min=-5000; 
+    var max=50000;  
+    var random =Math.floor(Math.random() * (+max - +min)) + +min; 
+    return random;
+        }
+    </script>
+       
+</div>
+        
+        
+<div class="footer">
+        <h1>fun everywhere</h1>
+    <img src="image/5364.gif" style="height:70px;" />
+</div>
+        
+        
+    </body>
+</html>
